@@ -4,15 +4,13 @@
 venv/
 env/
 
-# Environment variables and secrets
-.env
 .env.*
 !.env.examples
 
 __pycache__/
 *.py[cod]
 *$py.class
-
+.postman/
 .pytest_cache/
 .coverage
 htmlcov/
