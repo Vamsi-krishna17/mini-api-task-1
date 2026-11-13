@@ -1,0 +1,21 @@
+$kind: http-request
+url: "{{base_url}}/roam/japan?budget_inr=150000"
+method: GET
+queryParams:
+  budget_inr: "150000"
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Status code is 200", function () {
+          pm.response.to.have.status(200);
+      });
+      pm.test("Budget conversion fields are returned", function () {
+          const data = pm.response.json();
+          pm.expect(data).to.have.property("currency");
+          pm.expect(data).to.have.property("rate");
+          pm.expect(data).to.have.property("budget_inr");
+          pm.expect(data).to.have.property("budget_local");
+          pm.expect(data.budget_inr).to.eql(150000);
+      });
+    language: text/javascript
+order: 3000

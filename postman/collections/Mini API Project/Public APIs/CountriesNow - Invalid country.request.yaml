@@ -1,0 +1,6 @@
+$kind: http-request
+url: https://countriesnow.space/api/v0.1/countries/currency/q?country=atlantis
+method: GET
+queryParams:
+  country: atlantis
+order: 3000

@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{base_url}}/roam/japan?budget_inr=hello"
+method: GET
+queryParams:
+  budget_inr: hello
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Status code is 422", function () {
+          pm.response.to.have.status(422);
+      });
+    language: text/javascript
+order: 6000

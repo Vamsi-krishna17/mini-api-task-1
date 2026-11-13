@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{base_url}}/countries/germany"
+method: GET
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Status code is 200", function () {
+          pm.response.to.have.status(200);
+      });
+      pm.test("Country details are returned", function () {
+          const data = pm.response.json();
+          pm.expect(data).to.have.property("country");
+          pm.expect(data).to.have.property("currency");
+          pm.expect(data).to.have.property("capital");
+      });
+    language: text/javascript
+order: 2000

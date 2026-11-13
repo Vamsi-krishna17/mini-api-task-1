@@ -1,0 +1,4 @@
+$kind: http-request
+url: https://api.frankfurter.dev/v2/rate/INR/ABC
+method: GET
+order: 5000
