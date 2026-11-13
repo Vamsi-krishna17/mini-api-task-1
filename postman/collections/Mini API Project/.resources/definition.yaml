@@ -1,0 +1,4 @@
+$kind: collection
+description: "FastAPI Mini Country Budget Planner: endpoint checks and 404/422 error tests."
+variables:
+  base_url: http://127.0.0.1:8000
