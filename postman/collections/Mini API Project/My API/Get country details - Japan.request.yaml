@@ -1,5 +1,5 @@
 $kind: http-request
-url: "{{base_url}}/countries/germany"
+url: "{{base_url}}/countries/japan"
 method: GET
 scripts:
   - type: afterResponse
